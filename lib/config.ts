@@ -1,10 +1,10 @@
 import { Location } from "./types"
 
 export const DEFAULT_LOCATION: Location = {
-  city: "Copenhagen",
+  city: "Lizzano in Belvedere",
   coord: {
-    lat: "55.6760968",
-    lon: "12.5683371",
+    lat: "44.6760968",
+    lon: "11.5683371",
   },
 }
 

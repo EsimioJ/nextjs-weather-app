@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="it" suppressHydrationWarning>
       <body
         className={`${inter.className}, container mx-auto flex min-h-screen flex-col px-[1rem] antialiased selection:bg-black selection:text-white dark:bg-black dark:selection:bg-white dark:selection:text-black md:px-[2rem]`}
       >
@@ -40,11 +40,11 @@ export default function RootLayout({
             </div>
           </footer>
         </NextThemesProvider>
-        {/* <Script
+       <Script
           strategy={"beforeInteractive"}
           src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places&callback=Function.prototype`}
         /> 
-        <Analytics /> */}
+         <Analytics />
       </body>
     </html>
   )
