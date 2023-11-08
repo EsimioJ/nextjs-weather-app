@@ -16,7 +16,9 @@ export async function GET(request: Request) {
   }
 
   const res = await fetch(
-    `https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&cnt=${HOURS}&units=metric&appid=${appid}`,
+    `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&cnt=${HOURS}&units=metric&appid=${appid}`,
+    //`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&cnt=${HOURS}&units=metric&appid=${appid}`,
+    //https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=16f80769ea3e3d0f6bda061f3d800c5c
     {
       next: { revalidate: 900 },
     }
