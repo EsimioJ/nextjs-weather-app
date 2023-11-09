@@ -1,4 +1,5 @@
 "use client"
+import Map from "@/components/widgets/Map"
 import React, { useEffect } from "react"
 
 type Props = {}
@@ -32,7 +33,9 @@ const Page = (props: Props) => {
       fetchData();
     }, []);
   
-    return <div>porcoddue</div>;
+    return <div>
+      <Map />
+    </div>;
   };
   
   export default Page;
