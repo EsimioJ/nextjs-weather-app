@@ -114,8 +114,10 @@ export default function Map() {
           id="weatherSource"
           type="raster"
           tiles={[
+            //`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${OPENWEATHERMAP_TOKEN}`,
+
             //`https://maps.openweathermap.org/maps/2.0/weather/PR0/{z}/{x}/{y}?appid=75812949eb323e3b2b952f77f2102191`,
-            `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=16f80769ea3e3d0f6bda061f3d800c5c`,
+            `https://api.openweathermap.org/data/3.0/onecall?lat=44.1544355&lon=10.861614&exclude=hourly,daily&appid=${OPENWEATHERMAP_TOKEN}`,
             //https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=75812949eb323e3b2b952f77f2102191
           ]}
           tileSize={256}

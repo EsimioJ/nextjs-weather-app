@@ -4,7 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "openweathermap.org",
+        hostname: "*.openweathermap.org",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.mapbox.com",
         port: "",
         pathname: "**",
       },
