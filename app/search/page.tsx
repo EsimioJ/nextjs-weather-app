@@ -74,17 +74,17 @@ export default async function SearchPage({
     <>
       <div className="flex flex-col gap-4 md:flex-row">
         <div className="flex w-full min-w-[18rem] flex-col gap-4 md:w-1/2">
-          <CurrentWeather data={hourly_data.list[0]} city={hourly_data.city} />
+          <CurrentWeather data={hourly_data.hourly[0]} city={hourly_data.city} />
           <TenDayForecast data={ten_day_forecast} />
         </div>
         <section className="grid h-full grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
           <WeatherWidgets
-            data={hourly_data.list[0]}
+            data={hourly_data.hourly[0]}
             city={hourly_data.city}
             airQuality={air_pollution.list[0]}
             uvIndexForToday={uv_index.daily.uv_index_max[0]}
           />
-          <HourlyForecast data={hourly_data.list} />
+          <HourlyForecast data={hourly_data.hourly} />
           <Map />
           <OtherLargeCities />
         </section>
