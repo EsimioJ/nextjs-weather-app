@@ -88,7 +88,7 @@ export type HourlyForecastResponse = {
   cod: string
   message: number
   cnt: number
-  list: HourlyForecastData[]
+  hourly: HourlyForecastData[]
   city: City
 }
 
