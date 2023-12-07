@@ -1,14 +1,17 @@
 import { Location } from "./types"
 
 export const DEFAULT_LOCATION: Location = {
-  city: "Lizzano in Belvedere",
+  city: "Corno alle Scale",
   coord: {
-    lat: "44.6760968",
-    lon: "11.5683371",
+    lat: "44.1544355",
+    lon: "10.861614",
   },
 }
 
 export const DEFAULT_SUGGESTIONS = [
+  {
+    description: "Lizzano in Belvedere, Italy",
+  },
   {
     description: "London, United Kingdom",
   },
@@ -33,6 +36,14 @@ export const OTHER_LARGE_CITIES = [
     coord: {
       lat: 40.7127753,
       lon: -74.0059728,
+    },
+  },
+  {
+    city: "Copenhagen",
+    country: "Europe",
+    coord: {
+      lat: 55.6760968,
+      lon: 12.5683371,
     },
   },
   {

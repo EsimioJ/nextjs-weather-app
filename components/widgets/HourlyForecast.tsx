@@ -36,12 +36,12 @@ export default function HourlyForecast({ data }: HourlyForecastProps) {
             <div className="flex h-full items-center justify-center">
               <IconComponent
                 weatherCode={item.weather[0].id}
-                x={item.sys.pod}
+                //x={item.sys.pod}
                 className="h-8 w-8"
               />
             </div>
             <div className="flex justify-center">
-              {Math.floor(item.main.temp)}&deg;
+              {Math.floor(item.main?.temp)}&deg;
             </div>
           </div>
         ))}

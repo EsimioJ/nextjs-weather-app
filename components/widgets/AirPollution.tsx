@@ -76,19 +76,19 @@ export default function AirPollution({
         </CardTitle>
       </CardHeader>
       <CardContent className="my-auto">
-        <Progress aria-label="Air pollution" value={airQuality.main.aqi * 10} />
+        <Progress aria-label="Air pollution" value={airQuality?.main?.aqi * 10} />
       </CardContent>
       <CardFooter>
         <p>
-          {airQuality.main.aqi < 50
+          {airQuality?.main?.aqi < 50
             ? "Air quality is good."
-            : airQuality.main.aqi < 100
+            : airQuality?.main?.aqi < 100
             ? "Air quality is moderate."
-            : airQuality.main.aqi < 150
+            : airQuality?.main?.aqi < 150
             ? "Air quality is unhealthy for sensitive groups."
-            : airQuality.main.aqi < 200
+            : airQuality?.main?.aqi < 200
             ? "Air quality is unhealthy."
-            : airQuality.main.aqi < 300
+            : airQuality?.main?.aqi < 300
             ? "Air quality is very unhealthy."
             : "Air quality is hazardous."}
         </p>

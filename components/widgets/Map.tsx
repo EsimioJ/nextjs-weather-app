@@ -68,12 +68,15 @@ export default function Map() {
   const [MapCode, setMapCode] = useState("PR0")
 
   useEffect(() => {
+
     setViewport((prevViewport) => ({
       ...prevViewport,
       latitude: lat ? Number(lat) : Number(defaultLat),
       longitude: lon ? Number(lon) : Number(defaultLon),
     }))
   }, [lat, lon, defaultLat, defaultLon])
+
+  console.log(lat, lon, defaultLat, defaultLon)
 
   return (
     <Card className="order-11 col-span-2 h-[25rem] overflow-hidden overscroll-contain  p-0 md:p-0 xl:col-span-3">
@@ -94,9 +97,9 @@ export default function Map() {
         </Select>
       </div>
       <ReactMapGL
-        reuseMaps
+        //reuseMaps
         {...viewport}
-        attributionControl={false}
+        attributionControl={true}
         mapboxAccessToken={MAPBOX_TOKEN}
         mapStyle={`mapbox://styles/mapbox/${MapTheme}-v11`}
         style={{
@@ -109,7 +112,7 @@ export default function Map() {
           zIndex: 0,
         }}
       >
-        <Source
+        {/* <Source
           key={MapCode}
           id="weatherSource"
           type="raster"
@@ -118,12 +121,12 @@ export default function Map() {
 
             //`https://maps.openweathermap.org/maps/2.0/weather/PR0/{z}/{x}/{y}?appid=75812949eb323e3b2b952f77f2102191`,
             `https://api.openweathermap.org/data/3.0/onecall?lat=44.1544355&lon=10.861614&exclude=hourly,daily&appid=${OPENWEATHERMAP_TOKEN}`,
-            //https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=75812949eb323e3b2b952f77f2102191
+            //https://api.openweathermap.org/data/3.0/onecall?lat=44.1544355&lon=10.861614&exclude=hourly,daily&appid=75812949eb323e3b2b952f77f2102191
           ]}
           tileSize={256}
         >
           <Layer {...weatherLayer} />
-        </Source>
+        </Source> */}
       </ReactMapGL>
     </Card>
   )

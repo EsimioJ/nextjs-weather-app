@@ -10,9 +10,9 @@ interface TenDayForecastProps {
 }
 
 export default function TenDayForecast({ data }: TenDayForecastProps) {
-  const temperatures = data.list.map((item: ForecastData) => item.temp)
-  const minTemperature = Math.min(...temperatures.map((temp) => temp.min))
-  const maxTemperature = Math.max(...temperatures.map((temp) => temp.max))
+  const temperatures = data.list?.map((item: ForecastData) => item.temp)
+  const minTemperature = Math.min(...temperatures?.map((temp) => temp.min))
+  const maxTemperature = Math.max(...temperatures?.map((temp) => temp.max))
 
   return (
     <>

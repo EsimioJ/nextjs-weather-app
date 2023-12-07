@@ -66,10 +66,10 @@ export default function WeatherWidgets({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{formatSunTimeWithAMPM(city.sunset, city.timezone)}</p>
+          {/* <p>{formatSunTimeWithAMPM(city.sunset, city.timezone)}</p> */}
         </CardContent>
         <CardFooter>
-          <p>Sunrise: {formatSunTimeWithAMPM(city.sunrise, city.timezone)}</p>
+          {/* <p>Sunrise: {formatSunTimeWithAMPM(city.sunrise, city.timezone)}</p> */}
         </CardFooter>
       </Card>
       <Card className="order-4 h-48 xl:order-3">
@@ -110,7 +110,7 @@ export default function WeatherWidgets({
           </CardTitle>
         </CardHeader>
         <CardContent className="flex justify-center p-0">
-          <Compass speed={data.wind.speed} deg={data.wind.deg} />
+          <Compass speed={data?.wind?.speed} deg={data?.wind?.deg} />
         </CardContent>
       </Card>
       <Card className="order-5 flex h-48 flex-col justify-between">
@@ -277,13 +277,13 @@ export default function WeatherWidgets({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{Math.floor(data.main.feels_like)}&deg;</p>
+          <p>{Math.floor(data?.main?.feels_like)}&deg;</p>
         </CardContent>
         <CardFooter>
           <p>
-            {data.main.feels_like < data.main.temp
+            {data?.main?.feels_like < data?.main?.temp
               ? "Feels colder than the actual temperature."
-              : data.main.feels_like > data.main.temp
+              : data?.main?.feels_like > data?.main?.temp
               ? "Feels warmer than the actual temperature."
               : "Feels like the actual temperature."}
           </p>
@@ -314,9 +314,9 @@ export default function WeatherWidgets({
         </CardContent>
         <CardFooter>
           <p>
-            {data.main.humidity < 40
+            {data?.main?.humidity < 40
               ? "Low humidity. It might feel dry."
-              : data.main.humidity < 70
+              : data?.main?.humidity < 70
               ? "Moderate humidity. Comfortable conditions."
               : "High humidity. It might feel humid and uncomfortable."}
           </p>
@@ -381,13 +381,13 @@ export default function WeatherWidgets({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{data.main.pressure} hPa</p>
+          <p>{data?.main?.pressure} hPa</p>
         </CardContent>
         <CardFooter>
           <p>
-            {data.main.pressure < 1000
+            {data?.main?.pressure < 1000
               ? "Low pressure. Expect changes in the weather."
-              : data.main.pressure >= 1000 && data.main.pressure <= 1010
+              : data?.main?.pressure >= 1000 && data?.main?.pressure <= 1010
               ? "Normal pressure. Typical weather conditions."
               : "High pressure. Expect stable and clear weather."}
           </p>

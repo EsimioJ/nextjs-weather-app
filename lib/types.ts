@@ -111,7 +111,7 @@ export type AirQualityData = {
 
 export type AirPollutionResponse = {
   coord: Coordinates
-  list: AirQualityData[]
+  hourly: AirQualityData[]
 }
 
 type DailyUnits = {

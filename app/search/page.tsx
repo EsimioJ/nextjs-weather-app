@@ -25,11 +25,10 @@ export async function generateMetadata({
   const { lat, lon } = searchParams
   const url = `https://${process.env.VERCEL_URL}/api/weather/hourly?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY}`
             //https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=16f80769ea3e3d0f6bda061f3d800c5c
-            console.log("=======>",url)
-  const data = await fetch(url).then((res) => res.json())
+            const data = await fetch(url).then((res) => res.json())
 
   return {
-    title: `${data.city?.name} - Weather Forecast`,
+    title: `${data.city} - Weather Forecast`,
     description: `${data.city?.name} weather forecast with current conditions, wind, air quality, and what to expect for the next 3 days.`,
   }
 }
@@ -75,13 +74,13 @@ export default async function SearchPage({
       <div className="flex flex-col gap-4 md:flex-row">
         <div className="flex w-full min-w-[18rem] flex-col gap-4 md:w-1/2">
           <CurrentWeather data={hourly_data.hourly[0]} city={hourly_data.city} />
-          <TenDayForecast data={ten_day_forecast} />
+          {/* <TenDayForecast data={ten_day_forecast} /> */}
         </div>
         <section className="grid h-full grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
           <WeatherWidgets
             data={hourly_data.hourly[0]}
             city={hourly_data.city}
-            airQuality={air_pollution.list[0]}
+            airQuality={air_pollution.hourly[0]}
             uvIndexForToday={uv_index.daily.uv_index_max[0]}
           />
           <HourlyForecast data={hourly_data.hourly} />
